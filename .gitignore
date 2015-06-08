@@ -10,3 +10,4 @@
 *.aux
 
 *.dvi
+/master.pdf
