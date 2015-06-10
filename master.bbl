@@ -1,16 +1,39 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{BF2007}
-{\em {Biofeedback}}, 2010.
+\bibitem[SGI()]{SGIndustry}
+Serious games now 2 to 10 billion industry.
+\newblock
+  \url{http://www.hypergridbusiness.com/2012/08/serious-games-now-a-multi-billion-dollarindustry/}.
 
-\bibitem{Goe2010}
-{G{\"o}bel, Stefan}.
-\newblock {Serious games for health: personalized exergames}.
-\newblock pages 63 -- 66.
+\bibitem[\and Debbe I.~\and Baranowski~J.(2008)]{Baranowski2008}
+Baranowski~T. \and Debbe I.~\and Baranowski~J.
+\newblock Playing for real: Video games and stories for health-related behavior
+  change.
+\newblock 2008.
 
-\bibitem{Gray2013}
+\bibitem[Derryberry()]{Derryberry}
+Anne Derryberry.
+\newblock Serious games:online games for learning.
+
+\bibitem[Gray(2013)]{Gray2013}
 Stuart Gray.
 \newblock The extent of physical exercise and motivations in exergames.
 \newblock Honours Dissertation, Heriot-Watt University, 2013.
+
+\bibitem[{Krista West}(2007)]{BF2007}
+{Krista West}.
+\newblock \emph{{Biofeedback}}.
+\newblock 2007.
+
+\bibitem[T.(2012)]{Baranowski2012}
+Baranowski T.
+\newblock Impact of an active video game on healthy children’s physical
+  activity.
+\newblock 2012.
 
 \end{thebibliography}
