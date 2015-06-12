@@ -1,39 +1,59 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[SGI()]{SGIndustry}
-Serious games now 2 to 10 billion industry.
-\newblock
-  \url{http://www.hypergridbusiness.com/2012/08/serious-games-now-a-multi-billion-dollarindustry/}.
-
-\bibitem[\and Debbe I.~\and Baranowski~J.(2008)]{Baranowski2008}
-Baranowski~T. \and Debbe I.~\and Baranowski~J.
-\newblock Playing for real: Video games and stories for health-related behavior
-  change.
-\newblock 2008.
-
-\bibitem[Derryberry()]{Derryberry}
+\bibitem[Derryberry(2007)]{Derryberry}
 Anne Derryberry.
 \newblock Serious games:online games for learning.
+\newblock \emph{•}, 2007.
+
+\bibitem[Exergame definition()]{ExergameDef}
+Exergame definition.
+\newblock \url{http://dictionary.reference.com/browse/exergame}, 2000.
 
 \bibitem[Gray(2013)]{Gray2013}
 Stuart Gray.
 \newblock The extent of physical exercise and motivations in exergames.
 \newblock Honours Dissertation, Heriot-Watt University, 2013.
 
+\bibitem[Kretschmann R. \and Dittus I.~\and Lutz(2010)]{Kretschmann2010}
+I.~\and Meier~C. Kretschmann R. \and Dittus I.~\and Lutz.
+\newblock Nintendo wii sports: Simple gadget or serious “measure” for
+  health promotion? – a pilot study according to energy expenditure, movement
+  extent, and student perceptions.
+\newblock \emph{{}}, 2010.
+
 \bibitem[{Krista West}(2007)]{BF2007}
 {Krista West}.
 \newblock \emph{{Biofeedback}}.
-\newblock 2007.
+\newblock Chelsea House Pub, 2007.
+
+\bibitem[Nitendo Wii()]{NitendoWiiMario}
+Nitendo Wii.
+\newblock Nitendo wii mario kart.
+\newblock \url{http://www.nintendo.de/Spiele/Wii/Mario-Kart-Wii-281848.html},
+  2008.
+
+\bibitem[Serious Games - Industry()]{SGIndustry}
+Serious Games - Industry.
+\newblock {Serious games now 2 to 10 billion industry}.
+\newblock
+  \url{http://www.hypergridbusiness.com/2012/08/serious-games-now-a-multi-billion-dollarindustry/},
+  2012.
+
+\bibitem[T.(2008)]{Baranowski2008}
+Baranowski T.
+\newblock Playing for real: Video games and stories for health-related behavior
+  change.
+\newblock \emph{{}}, 2008.
 
 \bibitem[T.(2012)]{Baranowski2012}
 Baranowski T.
 \newblock Impact of an active video game on healthy children’s physical
   activity.
-\newblock 2012.
+\newblock \emph{{}}, 2012.
 
 \end{thebibliography}
