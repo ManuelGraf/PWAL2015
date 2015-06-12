@@ -44,6 +44,23 @@ Information we gathered from the evaluation of the previously developed exergame
 
 \section{Input Devices and Sensors}
 
+% Gibts Tabellen auch in schön in latex?
+\begin{center}
+\newcolumntype{C}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\begin{tabular}{ | C{2cm}  | C{4.25cm} | } \hline
+    Sensors & Parameters \\ \hline
+ 	Kettler Ergometer & Cycling speed in RPM (Integer) \\ \hline
+ 	
+    CSL Gamepad & Button states (Integer) Analog stick (Float) \\ \hline
+    
+    Zephyr Bioharness Strap & Measures the heart rate (Integer) \\ \hline
+
+    Asus Xtion Motion Sensor & Tracks the player movement (Integer) \\ \hline
+    
+    \end{tabular}
+\end{center}
+
 
 \section{Motivational Aspects}
 
@@ -57,11 +74,7 @@ Stuart Gray researched the connection between physical extent in exergamess and 
 \section{Preliminary Study}
 
 \section{Conclusion and Following Work}
-The goal of this thesis was to develop a playable multilayer game prototype with Unity3D
-embedded in the biofeedback system at the DHZ. The study with the working prototype has
-shown that playing over a longer period of time does imply a rise in the heart rate of the
-probands and may therefore work as an alternative to classical rehabilitation approaches. The exergame successfully helped to take the focus away from the serious and exhausting
-rehabilitation exercise into a lighter game context. During the tests, probands were able to reach and hold their target heart rate with the help of the biofeedback system. The game therefore, tries to automatically adapt to the individually fitness and skill level of the players. Weaker players get support over stronger boosts, easier speed gain and simpler steer controls to provide a interesting and challenging game for all players. A medical skilled person could act as instructor and observe the game and players by the server interface or connected MDC application. The recorded biofeedback data gets stored in a database (Couch DB) and could be used for analysing the individual fitness and health status of a player.
+Our goal was to develop a playable multilayer game prototype with Unity3D embedded in the biofeedback system at the DHZ. The study with the working prototype has shown that playing over a longer period of time does imply a rise in the heart rate of the probands and may therefore work as an alternative to classical rehabilitation approaches. The exergame successfully helped to take the focus away from the serious and exhausting rehabilitation exercise into a lighter game context. During the tests, probands were able to reach and hold their target heart rate with the help of the biofeedback system. The game therefore, tries to automatically adapt to the individually fitness and skill level of the players. Weaker players get support over stronger boosts, easier speed gain and simpler steer controls to provide a interesting and challenging game for all players. A medical skilled person could act as instructor and observe the game and players by the server interface or connected MDC application. The recorded biofeedback data gets stored in a database (Couch DB) and could be used for analysing the individual fitness and health status of a player.
 
 Further work is needed to use this game for rehabilitation with children who had heart surgery. Controlling the game with an ergometer may be difficult for children with reduced physical mobility and needs further testing with the according target audience. A possibility to reduce the difficultly of the kart controlling for people with no video game experience, could be to implement a new game mode, where the player could only drive along the track on 3 fixed lines. The player could control his speed by cycling and would automatically drive along the defined track lines. Leaning to the side would cause the kart to jump one line left or right. This gamemode could be played by everyone. The level of challenge in this game mode could be controlled by the number of obstacles, spawned along the 3 track lines. A further advantage of this mode would be, that the game won't be permanently interrupted, because players can't drive against walls or get stuck anywhere.
 
