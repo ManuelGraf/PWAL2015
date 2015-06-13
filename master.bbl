@@ -1,9 +1,29 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Baranowski(2008)]{Baranowski2008}
+T.~Baranowski.
+\newblock Playing for real: Video games and stories for health-related behavior
+  change.
+\newblock \emph{{}}, 2008.
+
+\bibitem[Baranowski(2012)]{Baranowski2012}
+T.~Baranowski.
+\newblock Impact of an active video game on healthy children's physical
+  activity.
+\newblock \emph{{}}, 2012.
+
+\bibitem[Buttussi et~al.(2007)Buttussi, Chittaro, Ranon, and
+  Verona]{Buttussi2007}
+F.~Buttussi, L.~Chittaro, R.~Ranon, and A.~Verona.
+\newblock Adaptation of graphics and gameplay in fitness games by exploiting
+  motion and physiological sensors.
+\newblock In Springer, editor, \emph{Smart Graphics, 8th International
+  Symposium}, pages 85--96, Kyoto, Japan, 2007.
 
 \bibitem[Derryberry(2007)]{Derryberry}
 Anne Derryberry.
@@ -15,20 +35,22 @@ Exergame definition.
 \newblock {}.
 \newblock \url{http://dictionary.reference.com/browse/exergame}, 2000.
 
+\bibitem[Garcia et~al.(2011)Garcia, Huizar, Baumgartner, Schreiber, and
+  Knoll]{Mendoza2011AutoMedic}
+A.~Mendoza Garcia, M.R. Huizar, B.~Baumgartner, U.~Schreiber, and A.~Knoll.
+\newblock Embedded platform for automation of medical devices.
+\newblock \emph{{}}, 2011.
+
 \bibitem[Gray(2013)]{Gray2013}
 Stuart Gray.
 \newblock The extent of physical exercise and motivations in exergames.
 \newblock Honours Dissertation, Heriot-Watt University, 2013.
 
-\bibitem[Knoll(2011)]{Mendoza2011AutoMedic}
-A.M. Garcia{,} M.R. Huizar{,} B. Baumgartner{,} U. Schreiber{,}~A. Knoll.
-\newblock Embedded platform for automation of medical devices.
-\newblock \emph{{}}, 2011.
-
-\bibitem[Meier(2010)]{Kretschmann2010}
-R.~Kretschmann{,} I. Dittus{,} I. Lutz{,}~C. Meier.
-\newblock Nintendo wii sports: Simple gadget or serious {“}measure{”} for
-  health promotion? – a pilot study according to energy expenditure, movement
+\bibitem[Kretschmann et~al.(2010)Kretschmann, Dittus, Lutz, and
+  Meier]{Kretschmann2010}
+R.~Kretschmann, I.~Dittus, I.~Lutz, and C.~Meier.
+\newblock Nintendo wii sports: Simple gadget or serious {``}measure{''} for
+  health promotion? -- a pilot study according to energy expenditure, movement
   extent, and student perceptions.
 \newblock \emph{{}}, 2010.
 
@@ -38,24 +60,19 @@ Nitendo Wii.
 \newblock \url{http://www.nintendo.de/Spiele/Wii/Mario-Kart-Wii-281848.html},
   2008.
 
+\bibitem[Ryan et~al.(2006,)Ryan, Rigby, and Przybylski]{Ryan2006SDT}
+R.~M. Ryan, C.~S. Rigby, and A.~Przybylski.
+\newblock The motivational pull of video games: A self- determination theory
+  approach.
+\newblock \emph{Motivation and Emotion}, 30\penalty0 (4):\penalty0 344--361,
+  2006,.
+
 \bibitem[Serious Games - Industry()]{SGIndustry}
 Serious Games - Industry.
-\newblock Serious games now 2{\$} to 10{\$} billion industry.
+\newblock Serious games now {\$}2 to {\$}10 billion industry.
 \newblock
   \url{http://www.hypergridbusiness.com/2012/08/serious-games-now-a-multi-billion-dollarindustry/},
   2012.
-
-\bibitem[T.(2008)]{Baranowski2008}
-Baranowski T.
-\newblock Playing for real: Video games and stories for health-related behavior
-  change.
-\newblock \emph{{}}, 2008.
-
-\bibitem[T.(2012)]{Baranowski2012}
-Baranowski T.
-\newblock Impact of an active video game on healthy children’s physical
-  activity.
-\newblock \emph{{}}, 2012.
 
 \bibitem[West(2007)]{BF2007}
 Krista West.

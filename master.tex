@@ -39,12 +39,9 @@ There are many successful commercial “exergame platforms” like the Nintendo 
 
 Information we gathered from the evaluation of the previously developed exergames at the DHZ showed that single-player video games lacked the needed methods to sustain motivation. Playing the games for the first time could be a lot of fun while the concept of controlling the game over the biofeedback sensors is new to the player. But as already stated, this setup won't work quite well in keeping up the long term motivation for proceeding sessions.
 
-\section{Game Concept}
-
-
 \section{Input Devices and Sensors}
-The biofeedback system game setup consists of two common ergometers, a motion sensor and a belt for measuring heart rate and respiration. The major goal of the game was to promote physical activity, in order to support the personal rehabilitation process. The game mechanics have to work driven by the tracked movement and vital parameters of the player. The main focus lays on the heart rate and cycling speed of the participants. The game play should cause a moderate rise of the player heart rate over time. The intensity shouldn't be too low, to obtain a relevant training effect and on the other hand not too high to be dangerous for the health. Critical parameters, like the target heart rate a player should reach to have an effective training should be assigned individually by a medical skilled supervisor.
-Otherwise, for a normal person, the suggested heart rate for rehabilitation could be automatically set to 40\% of his maximal heart rate. The maximal heart rate could be calculated using the age of the player. Other considerable parameters, which could affect the game are the cycling speed of the ergometers, respiration values and motion tracking. The rounds per minute (RPM) of the ergometers are tracked over a magnet clamped behind the paddle. The magnet extension is crucial for this setup measuring the patient's cycling speed correctly. The ergometer will still output RPM values also if the player has stopped cycling and decrease very slowly. The game is played cycling on an ergometer and could either be controlled over the motion sensor or the game pad.
+The biofeedback system game setup consists of two common ergometers, a motion sensor and a belt for measuring heart rate and respiration. 
+Other considerable parameters, which could affect the game are the cycling speed of the ergometers, respiration values and motion tracking. The ergometer standard RPM output values are normally measured by the momentum of the internal flywheel, so it will still produce data even if the patient stopped cycling. Since our application needed the actual cycling, we modified the measurement of rounds per minute (RPM) of the ergometers by tracking the cycle speed with magnets clamped behind the paddle. The game is played cycling on an ergometer and could either be controlled over the motion sensor or the game pad.
 
 \begin{center}
 \newcolumntype{C}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -61,26 +58,70 @@ Otherwise, for a normal person, the suggested heart rate for rehabilitation coul
 	% Row 4
     Asus Xtion Motion Sensor & Tracking of the upper body movements (Integer) \\ \hline    
     \end{tabular}
-   \textit{Table 1: Sensors}
+
 \end{center}
 
-To connect all required medical sensors and peripheral devices with the Unity3D application, we used the AutoMedic Framework(MDC) developed by Dr. Mendoza\cite{Mendoza2011AutoMedic}. Basically, the framework and Unity3D instance exchange data over a Transmission Control Protocol(TCP) connection in both directions. Therefore, the Unity3D application opens a server socket with an IP address and port waiting for connections. We extended the MDC functionality to support multiplayer connectivity by automatically incrementing the port numbers if a port is already blocked by an other player. When the TCP connection was successful established, the MDC will send a package with an one byte identifier to notify and trigger the "level load" function in the Unity3D clients. The MDC records and forwards the player input values and measured biofeedback data to the clients, while all clients send their relevant player activities back to the MDC. The complete player sessions were stored in a database for further analyzing by a medical supervisor.
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{sensors}
+ \caption{Sensors used}
+\end{figure}
+
+To connect all required medical sensors and peripheral devices with the Unity3D application, we used the \emph{AutoMedic Framework (MDC)} developed by Dr. Alejandro Mendoza\cite{Mendoza2011AutoMedic}, which offers functionality to interconnect several peripherals or systems and manipulate or send their input and output values via a graphical user interface.
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{MDC_motiongamesetup}
+ \caption{MDC interface for a setup containing two Unity3D game clients and one motion sensor capturing two players.}
+\end{figure}
+
+ Basically, the framework and Unity3D instances exchange data over a Transmission Control Protocol(TCP) connection in both directions. Therefore, the Unity3D application opens a server socket with an IP address and port waiting for connections. We extended the MDC functionality to support multiplayer connectivity by automatically incrementing the port numbers if a port is already blocked by an other player. When the TCP connection was successful established, the MDC will send a package with an one byte identifier to notify and trigger the "level load" function in the Unity3D clients. The MDC records and forwards the player input values and measured biofeedback data to the clients, while all clients send their relevant player activities back to the MDC. The complete player sessions were stored in a database for further analyzing by a medical supervisor.
 
 
 
 \section{Motivational Aspects}
 
-A big challenge in creating a high qualitative exergame is to make it replayable and keep up a steady motivation over a longer period of time. Our goal was to develop a multiplayer racing exergame, which could be played together with up to eight players or an artificial intelligence. The game is meant to be embedded in the biofeedback system at the DHZ. We will also try to improve the game experience through controlling the karts with a motion sensor and through the implementation of various game elements, such as weapons system or collectable items, similar to the classic “Super Mario Kart” \cite{NitendoWiiMario} combat racing game. The game prototype has to be developed with the Unity3D game engine, based on the experience of the former developed games at the DHZ. The game should provide an initial motivation to start with exercising and support a better long term motivation through the multiplayer extension. Therefore, we what the game to be appropriate for the longer task of rehabilitation, especially with the target group of children and adolescents. 
+A big challenge in creating a high qualitative exergame is to make it replayable and keep up a steady motivation over a longer period of time while still maintaining a steady physical energy expenditure. 
+Stuart Gray researched the connection between physical extent in exergamess and the motivational pull of head-to-head and leader board competitive games \cite{Gray2013} by analyzing the results of different studies which vary in their results regarding the effect of multiplayer competitive games on players motivation. His conclusion was that competitive gameplay can have either a negative or positive effect on energy expenditure depending on how competitive participants are. Still, his main study showed that participants who played any competitive game mode spent significantly more time in anaerobic training zones, suggesting that competitive conditions are more effective for energy expenditure than non-competitive conditions. Thus our goal was to develop a multiplayer racing exergame, which could be played together with up to eight players or an artificial intelligence.
 
-Stuart Gray researched the connection between physical extent in exergamess and the motivational pull of head-to-head and leader board competitive games \cite{Gray2013}. Firstly, he analyzed different conducted studies which vary in their results regarding the effect of multiplayer competitive games on intrinsic motivation. The analyzed studies led him to the conclusion that competitive gameplay has a positive effect on highly competitive individuals whereas it tends to have negative or no effect at all on the intrinsic motivation of lowly competitive individuals. His main study was conducted on 33 participants, aged from 15 to 65, with an average age of 25, over a period of 4 weeks, and was analyzing the impact of competitive EG play on energy expenditure. Participants who played any competitive game mode spent significantly more time in anaerobic training zones (0.82 * HRmax - 1 * HRmax), suggesting that competitive conditions are more effective for energy expenditure than non-competitive conditions.
+We also tried to improve the game experience through controlling the karts by intuitive controls via motion sensor to increase perceived competence and thus intrinsic motivation \cite{Ryan2006SDT}.
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{gestures3}
+ \caption{Motion sensor interaction}
+\end{figure}
+Observation of a Preliminary study with 18 students of the \emph{University of Applied Sciences Munich} to test the interaction concept has shown that the motion sensor controls were accepted and had positive effects on the fun factor and replay motivation of the game. Because of sensor failures and difficulties with input delays which led to overcompensation in countersteering and early abortion of the sessions the collected training data was inconclusive. Despite that and the fact that cycling while steering the vehicle by upper body inclination was very hard task to accomplish, most participants stated they wanted to replay the game.
+
+The Implementation of various game elements, such as weapons system or collectable items, similar to the classic, well known combat racing game \emph{ Super Mario Kart} \cite{NitendoWiiMario} should further enhance game experience and lower initial learning effort. 
+
+To balance the gameplay and even put the chances to win between skilled and non skilled video gamers, the current racing position affects what kind of powerups the player can obtain. While the leading player receives only the weakest power-ups, the player at the last rank will more likely receive strong power-ups which have a huge impact on the current game state, allowing them to catch up fast.
+
+The game prototype had to be developed with the Unity3D game engine, based on the experience and tools of former developed games at the DHZ. The game should provide an initial motivation to start with exercising and support a better long term motivation through the multiplayer extension. Therefore, we wanted the game to be appropriate for the longer task of rehabilitation, especially with the target group of children and adolescents. 
 
 
 \section{Biofeedback Adaptations}
 
-\section{Preliminary Study}
+The major goal of the game was to promote physical activity, in order to support the personal rehabilitation process. The game mechanics have to work driven by the tracked movement and vital parameters of the player. Our main focus was tracking the heart rate and cycling speed of the participants to recognize physical exhaustion. Playing the game should cause a moderate rise of the player heart rate over time to aerobic training levels. The intensity shouldn't be too low, to obtain a relevant training effect and on the other hand not too high to be dangerous for health. Critical parameters, like the target heart rate ($HR_T$) a player should reach to have an effective training could be assigned individually by a medical skilled supervisor via the initial session options feature of the AutoMedic Framework.
+Otherwise, according to \citet{Buttussi2007} the suggested heart rate for aerobic exercise could be automatically set to 60\% - 75\% of his maximum heart rate, calculated with the simple formula $220-age$.
+Depending on the current heart rate, several adaptations are made to the game during runtime to either reduce or promote the players physical effort by switching exercise modes. 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{exerciseautomata}
+ \caption{finite state automata to switch among exercise modes as proposed in \cite{Buttussi2007}}
+\end{figure}
+The different exercise modes influence the supportive power of collected power-ups as well as the Ergometers drag, so that the game can cope with the players' differing stamina levels. Therefore more athletic players have to put more effort in cycling to reach their $HR_T$ just as fast as others. As the participants heart rate gets closer to his individual optimum his game avatar gets faster. Thus the better the training effect, the better the chances for winning the racing game. 
+To give the player feedback about his current exertion, the Heads-Up Display (HUD) contained a heart shaped HR indicator which slowly fills up as the players heart rate rises. Upon exceeding the upper limit of the optimum HR, it shows a warning sign. Additionally, screen filling commands were provided telling the user to lower or rise physical effort.
+
+
+
 
 \section{Conclusion and Following Work}
-Our goal was to develop a playable multilayer game prototype with Unity3D embedded in the biofeedback system at the DHZ. The study with the working prototype has shown that playing over a longer period of time does imply a rise in the heart rate of the probands and may therefore work as an alternative to classical rehabilitation approaches. The exergame successfully helped to take the focus away from the serious and exhausting rehabilitation exercise into a lighter game context. During the tests, probands were able to reach and hold their target heart rate with the help of the biofeedback system. The game therefore, tries to automatically adapt to the individually fitness and skill level of the players. Weaker players get support over stronger boosts, easier speed gain and simpler steer controls to provide a interesting and challenging game for all players. A medical skilled person could act as instructor and observe the game and players by the server interface or connected MDC application. The recorded biofeedback data gets stored in a database (Couch DB) and could be used for analysing the individual fitness and health status of a player.
+Our goal was to develop a playable multiplayer game prototype with Unity3D embedded in the biofeedback system at the DHZ. The study with the working prototype has shown that playing over a longer period of time does imply a rise in the heart rate of the participation and may therefore work as an alternative to classical rehabilitation approaches. The exergame successfully helped to take the focus away from the serious and exhausting rehabilitation exercise into a lighter game context. Although the data for motion sensor controls was inconclusive, the data collected during sessions played with a gamepad has shown, that participants were able to reach and hold their $HR_T$ with the help of the biofeedback system.
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{THRboxplot}
+ \caption{Percentage of maximum heartrate reached at average when controlling the game with ergometer and gamepad}
+\end{figure}
+The game therefore, tries to automatically adapt to the individually fitness and skill level of the players. Weaker players get support over stronger boosts, easier speed gain and simpler steer controls to provide a interesting and challenging game for all players. A medical skilled person could act as instructor and observe the game and players by the server interface or connected MDC application. The recorded biofeedback data gets stored in a database (Couch DB) and could be used for analysing the individual fitness and health status of a player.
 
 Further work is needed to use this game for rehabilitation with children who had heart surgery. Controlling the game with an ergometer may be difficult for children with reduced physical mobility and needs further testing with the according target audience. A possibility to reduce the difficultly of the kart controlling for people with no video game experience, could be to implement a new game mode, where the player could only drive along the track on 3 fixed lines. The player could control his speed by cycling and would automatically drive along the defined track lines. Leaning to the side would cause the kart to jump one line left or right. This gamemode could be played by everyone. The level of challenge in this game mode could be controlled by the number of obstacles, spawned along the 3 track lines. A further advantage of this mode would be, that the game won't be permanently interrupted, because players can't drive against walls or get stuck anywhere.
 
@@ -89,7 +130,7 @@ Besides this, following work could be, to provide all further stored trainings s
 The AI could be improved with a state machine and self determining sensor system, which no
 longer needs a static path mesh. An obstacle avoiding system, that could automatically detectand calculate an alternative path will also be needed for more complex tracks.
 The complete system should be simplified and made playable at home with every common
-ergometer. The client, server and MDC applications should be wrapped or merged in one userfriendly program, including a simple GUI. This could also help people to do their rehabilitation exercises at home if they are less mobile, but still want to exercise alone in a controlled way. The biofeedback system of the game can help to get better self knowledge about the own fitness status and help to improve self observation during exercising using the sensor system.
+ergometer. The client, server and MDC applications should be wrapped or merged in one user friendly program, including a simple GUI. This could also help people to do their rehabilitation exercises at home if they are less mobile, but still want to exercise alone in a controlled way. The biofeedback system of the game can help to get better self knowledge about the own fitness status and help to improve self observation during exercising using the sensor system.
 
 \end{multicols}
 
