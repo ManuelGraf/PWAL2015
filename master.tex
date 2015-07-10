@@ -45,6 +45,30 @@ There are many successful commercial “exergame platforms” like the Nintendo 
 Information we gathered from the evaluation of the previously developed exergames at the DHZ showed that single-player video games lacked the needed methods to sustain motivation. Playing the games for the first time could be a lot of fun while the concept of controlling the game over the biofeedback sensors is new to the player. But as already stated, this setup won't work quite well in keeping up the long term motivation for proceeding sessions.
 
 
+\section{Motivational Aspects}
+
+A big challenge in creating a high qualitative exergame is to make it replayable and keep up a steady motivation over a longer period of time while still maintaining a steady physical energy expenditure. 
+Stuart Gray researched the connection between physical extent in exergamess and the motivational pull of head-to-head and leader board competitive games \cite{Gray2013} by analyzing the results of different studies which vary in their results regarding the effect of multiplayer competitive games on players motivation. His conclusion was that competitive gameplay can have either a negative or positive effect on energy expenditure depending on how competitive participants are. Still, his main study showed that participants who played any competitive game mode spent significantly more time in anaerobic training zones, suggesting that competitive conditions are more effective for energy expenditure than non-competitive conditions. Thus our goal was to develop a multiplayer racing exergame, which could be played together with up to eight players or an artificial intelligence.
+
+We also tried to improve the game experience through controlling the karts by intuitive controls via motion sensor to increase perceived competence and thus intrinsic motivation \cite{Ryan2006SDT}.
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.4\textwidth]{gestures3}
+ \caption{Motion sensor interaction}
+\end{figure}
+Observation of a Preliminary study with 18 students of the \emph{University of Applied Sciences Munich} to test the interaction concept has shown that the motion sensor controls were accepted and had positive effects on the fun factor and replay motivation of the game. Because of sensor failures and difficulties with input delays which led to overcompensation in countersteering and early abortion of the sessions the collected training data was inconclusive. Despite that and the fact that cycling while steering the vehicle by upper body inclination was very hard task to accomplish, most participants stated they wanted to replay the game.
+
+The Implementation of various game elements, such as weapons system or collectable items, similar to the classic, well known combat racing game \emph{ Super Mario Kart} \cite{NitendoWiiMario} should further enhance game experience and lower initial learning effort. 
+
+To balance the gameplay and even put the chances to win between skilled and non skilled video gamers, the current racing position affects what kind of powerups the player can obtain. While the leading player receives only the weakest power-ups, the player at the last rank will more likely receive strong power-ups which have a huge impact on the current game state, allowing them to catch up fast.
+
+\begin{figure}[H]
+  \includegraphics[width=0.5\textwidth]{ingame}
+  \caption{Server game controls}
+\end{figure}
+
+
+The game prototype had to be developed with the Unity3D game engine, based on the experience and tools of former developed games at the DHZ. The game should provide an initial motivation to start with exercising and support a better long term motivation through the multiplayer extension. Therefore, we wanted the game to be appropriate for the longer task of rehabilitation, especially with the target group of children and adolescents. 
 
 \section{Input Devices and Sensors}
 The biofeedback system game setup consists of two common ergometers, a motion sensor and a belt for measuring heart rate and respiration. 
@@ -75,40 +99,14 @@ Other considerable parameters, which could affect the game are the cycling speed
 \end{figure}
 
 To connect all required medical sensors and peripheral devices with the Unity3D application, we used the \emph{AutoMedic Framework (MDC)} developed by Dr. Alejandro Mendoza\cite{Mendoza2011AutoMedic}, which offers functionality to interconnect several peripherals or systems and manipulate or send their input and output values via a graphical user interface.
+
+ Basically, the framework and Unity3D instances exchange data over a Transmission Control Protocol(TCP) connection in both directions. Therefore, the Unity3D application opens a server socket with an IP address and port waiting for connections. We extended the MDC functionality to support multiplayer connectivity by automatically incrementing the port numbers if a port is already blocked by an other player. When the TCP connection was successful established, the MDC will send a package with an one byte identifier to notify and trigger the "level load" function in the Unity3D clients. The MDC records and forwards the player input values and measured biofeedback data to the clients, while all clients send their relevant player activities back to the MDC. The complete player sessions were stored in a database for further analyzing by a medical supervisor.
+
 \begin{figure}[H]
   \centering
     \includegraphics[width=0.4\textwidth]{MDC_motiongamesetup}
  \caption{MDC interface for a setup containing two Unity3D game clients and one motion sensor capturing two players.}
 \end{figure}
-
- Basically, the framework and Unity3D instances exchange data over a Transmission Control Protocol(TCP) connection in both directions. Therefore, the Unity3D application opens a server socket with an IP address and port waiting for connections. We extended the MDC functionality to support multiplayer connectivity by automatically incrementing the port numbers if a port is already blocked by an other player. When the TCP connection was successful established, the MDC will send a package with an one byte identifier to notify and trigger the "level load" function in the Unity3D clients. The MDC records and forwards the player input values and measured biofeedback data to the clients, while all clients send their relevant player activities back to the MDC. The complete player sessions were stored in a database for further analyzing by a medical supervisor.
-
-
-
-\section{Motivational Aspects}
-
-A big challenge in creating a high qualitative exergame is to make it replayable and keep up a steady motivation over a longer period of time while still maintaining a steady physical energy expenditure. 
-Stuart Gray researched the connection between physical extent in exergamess and the motivational pull of head-to-head and leader board competitive games \cite{Gray2013} by analyzing the results of different studies which vary in their results regarding the effect of multiplayer competitive games on players motivation. His conclusion was that competitive gameplay can have either a negative or positive effect on energy expenditure depending on how competitive participants are. Still, his main study showed that participants who played any competitive game mode spent significantly more time in anaerobic training zones, suggesting that competitive conditions are more effective for energy expenditure than non-competitive conditions. Thus our goal was to develop a multiplayer racing exergame, which could be played together with up to eight players or an artificial intelligence.
-
-We also tried to improve the game experience through controlling the karts by intuitive controls via motion sensor to increase perceived competence and thus intrinsic motivation \cite{Ryan2006SDT}.
-\begin{figure}[H]
-  \centering
-    \includegraphics[width=0.4\textwidth]{gestures3}
- \caption{Motion sensor interaction}
-\end{figure}
-Observation of a Preliminary study with 18 students of the \emph{University of Applied Sciences Munich} to test the interaction concept has shown that the motion sensor controls were accepted and had positive effects on the fun factor and replay motivation of the game. Because of sensor failures and difficulties with input delays which led to overcompensation in countersteering and early abortion of the sessions the collected training data was inconclusive. Despite that and the fact that cycling while steering the vehicle by upper body inclination was very hard task to accomplish, most participants stated they wanted to replay the game.
-
-The Implementation of various game elements, such as weapons system or collectable items, similar to the classic, well known combat racing game \emph{ Super Mario Kart} \cite{NitendoWiiMario} should further enhance game experience and lower initial learning effort. 
-
-To balance the gameplay and even put the chances to win between skilled and non skilled video gamers, the current racing position affects what kind of powerups the player can obtain. While the leading player receives only the weakest power-ups, the player at the last rank will more likely receive strong power-ups which have a huge impact on the current game state, allowing them to catch up fast.
-
-\begin{figure}[H]
-  \includegraphics[width=0.5\textwidth]{ingame}
-  \caption{Server game controls}
-\end{figure}
-
-
-The game prototype had to be developed with the Unity3D game engine, based on the experience and tools of former developed games at the DHZ. The game should provide an initial motivation to start with exercising and support a better long term motivation through the multiplayer extension. Therefore, we wanted the game to be appropriate for the longer task of rehabilitation, especially with the target group of children and adolescents. 
 
 
 \section{Biofeedback Adaptations}
